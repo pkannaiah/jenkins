@@ -18,6 +18,11 @@ pipeline {
                  bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
+		stage('Test') {
+            steps {
+                 bat "mvn clean test"
+            }
+        }
         	stage('Approval to Deploy') {
             steps {
              script{
